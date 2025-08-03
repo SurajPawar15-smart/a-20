@@ -1,0 +1,152 @@
+<div class="row">
+  <div class="col-3">
+    @if(isDivVisible==true){
+    <div class="bg-primary p-3">Div 1</div>
+    }
+  </div>
+  <div class="col-3">
+    --{{ div2Status }}
+    @if(div2Status=="show"){
+    <div class="bg-danger p-3">Div 2</div>
+    }
+  </div>
+  <div class="col-3">
+    @if(isDivVisible){
+    <div class="bg-warning pt-3" (click)="toggleDiv3()">Div 3</div>
+    }
+  </div>
+</div>
+<div class="row pt-3">
+  <div class="col-3">
+    <button class="btn btn-success" (click)="hideDiv1()">Hide</button>
+    <button class="btn btn-danger" (click)="showDiv1()">Show</button>
+  </div>
+  <div class="col-3">
+    <button class="btn btn-success" (click)="toggleDiv2()">Toggle</button>
+  </div>
+  <div class="col-3">
+    <button class="btn btn-success" (click)="toggleDiv3()">Toggle</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <input
+      type="text"
+      placeholder="Day start char"
+      [(ngModel)]="startingCharDayName"
+    />
+  </div>
+  <div class="col-3">
+    @if (startingCharDayName === 'mon') {
+    <span>Monday</span>
+    } @else if (startingCharDayName === 'tue') {
+    <span>Tuesday</span>
+    } @else if (startingCharDayName === 'wed') {
+    <span>Wednesday</span>
+    } @else if (startingCharDayName === 'thu') {
+    <span>Thursday</span>
+    } @else if (startingCharDayName === 'fri') {
+    <span>Friday</span>
+    } @else if (startingCharDayName === 'sat') {
+    <span>Saturday</span>
+    } @else if (startingCharDayName === 'sun') {
+    <span>Sunday</span>
+    } @else {
+    <span>Invalid Day</span>
+    }
+  </div>
+  <div class="col-3">
+    @switch (startingCharDayName) { @case ('mon') {
+    <span>Monday</span>
+    } @case ('tue') {
+    <span>Tuesday</span>
+    } @case ('wed') {
+    <span>Wednesday</span>
+    } @case ('thu') {
+    <span>Thursday</span>
+    } @case ('fri') {
+    <span>Friday</span>
+    } @case ('sat') {
+    <span>Saturday</span>
+    } @case ('sun') {
+    <span>Sunday</span>
+    } @default {
+    <span>Invalid Day</span>
+    } }
+  </div>
+  <div class="col-3">
+    <h3>Live Preview:</h3>
+    <!-- <pre>{{ studentList }}</pre> -->
+    <pre>{{ studentList | json }}</pre>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <ul>
+      @for(item of cityList ;track $index){
+      <li>{{ item }}</li>
+      }
+    </ul>
+  </div>
+  <div class="col-3">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Course</th>
+          <th>Email</th>
+          <th>Contact Number</th>
+          <th>Gender</th>
+          <th>Enrollment Date</th>
+          <th>Scholarship</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(item of studentList;track $index){
+        <tr class="table-active">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.age }}</td>
+          <td>{{ item.course }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.contactNumber }}</td>
+          <td>{{ item.gender }}</td>
+          <td>{{ item.enrollmentDate }}</td>
+          <td>{{ item.isScholarship }}</td>
+          <td>{{ item.city }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  <div class="col-3"></div>
+</div>
+<div class="row">
+  <div class="row g-4">
+    <!-- Card 1 -->
+    @for (item of studentList; track $index) {
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 rounded-3">
+        <img
+          src="https://via.placeholder.com/400x200"
+          class="card-img-top"
+          alt="{{ item.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text text-muted">
+            Course: {{ item.course }}<br />
+            City: {{ item.city }}<br />
+            Email: {{ item.email }}
+          </p>
+          <a href="#" class="btn btn-primary btn-sm">View Profile</a>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

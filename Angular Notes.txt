@@ -1,0 +1,1788 @@
+================================================
+Day-01 setup installation and File structure 
+================================================
+Angular 20 => we need to update version of the nodejs are required.
+In this servies we are learning Angular 20 latest version
+
+Angular 20: Setup Requirements & Node.js Version
+=>Prerequisites
+To install or upgrade to Angular v20, you must have an updated Node.js version:
+
+=>Angular Version	Required Node.js Version
+Angular 20	Node.js v18.13.0 or later (recommended: v20.x)
+
+=>Steps to Update Node.js
+1. Check Current Node Version
+node -v
+
+2. Update Node.js (Options)
+Use nvm (Node Version Manager) (recommended):
+nvm install 20
+nvm use 20
+Or download latest from: https://nodejs.org/
+
+=>Create Angular 20 Project
+Once Node.js is updated:
+
+1. Install/Update Angular CLI globally
+npm install -g @angular/cli@20
+
+2. Create New Project
+ng new angular-20-app
+cd angular-20-app
+ng serve
+
+=> What’s New in Angular 20 (2025 Update)
+Angular 20 builds upon Angular 17–19 improvements and includes:
+
+🔹 Improved Signal Support (default reactive model)
+🔹 Zone-less Change Detection (more efficient UI updates)
+🔹 Faster Builds & Smaller Bundles (thanks to esbuild + ngcc removal)
+🔹 Control Flow Syntax with @if, @for
+🔹 Better SSR (Server-Side Rendering)
+🔹 Vite integration (faster dev server)
+🔹 Strict mode improvements
+🔹 Standalone Components enhancement
+🔹 Improved DX (Developer Experience)
+
+🧠 Summary
+✅ Node.js v18.13+ or v20 is required for Angular 20
+✅ Use Angular CLI v20
+✅ Angular 20 brings better performance, modern syntax, and reactivity with signals
+
+1. Setup & Installation
+
+=> Prerequisites
+Node.js (Download from https://nodejs.org)
+Angular CLI (Command Line Interface)
+
+=> Install Angular CLI
+npm install -g @angular/cli
+
+=> Create a New Angular Project
+ng new my-app
+
+It will ask for routing and stylesheet format (CSS, SCSS, etc.)
+It sets up the whole structure automatically.
+
+=> Run the Angular App
+cd my-app
+ng serve
+
+Access it at http://localhost:4200
+
+2. Angular Project File Structure (Overview)
+my-app/
+├── e2e/                  # End-to-end testing setup
+├── node_modules/         # Node.js dependencies
+├── src/                  # Source code folder
+│   ├── app/              # Main application folder (components, modules)
+│   │   ├── app.component.ts/html/css  # Root component files
+│   │   └── app.module.ts # Main application module
+│   ├── assets/           # Static assets like images, JSON, fonts
+│   ├── environments/     # Environment-specific config (dev, prod)
+│   ├── index.html        # Main HTML page
+│   ├── main.ts           # Entry point of Angular app
+│   ├── styles.css        # Global styles
+│   └── polyfills.ts      # Compatibility for older browsers
+├── angular.json          # Angular CLI configuration
+├── package.json          # Project metadata and dependencies
+├── tsconfig.json         # TypeScript configuration
+└── README.md             # Project documentation
+
+=> Summary
+File / Folder	Description
+src/app/	Your actual Angular code (components, services, modules).
+angular.json	CLI config for build, serve, test settings.
+package.json	Lists all dependencies, scripts, versions.
+main.ts	        Entry point to bootstrap the Angular app.
+index.html	Main HTML template loaded in browser.
+app.module.ts	Root module that wires up all Angular parts.
+
+=> What is SPA (Single Page Application)?
+Definition:
+A SPA (Single Page Application) is a web application or website that dynamically updates a single HTML page without fully reloading the page from the server every time the user navigates.
+
+=> Traditional Website vs SPA
+Feature	               Traditional Website	            Single Page Application (SPA)
+Page Reloads	        Reloads on every navigation	    Loads once; updates dynamically
+Server Interaction	Fetches a new HTML page each time   Only fetches data via APIs (JSON)
+Speed	                Slower (due to reloads)	            Faster, smoother user experience
+Examples	        News websites, blogs	            Gmail, Facebook, Twitter, Trello
+
+=> How SPAs Work:
+1) Initial Load – Loads one main HTML page (like index.html).
+2) Routing – Controlled via JavaScript (client-side), using libraries like:
+Angular Router
+React Router
+Vue Router
+3) Dynamic Data – Fetched via APIs (like REST or GraphQL) using fetch() or axios.
+4) No Full Reload – Only part of the content changes, preserving state and improving UX.
+
+=> SPA in Angular, React, and Vue
+Framework/Library	SPA Support	Built-in Router
+Angular	                ✅ Yes	        @angular/router
+React	                ✅ Yes	        react-router-dom
+Vue.js	                ✅ Yes	        vue-router
+
+=> The three most popular frameworks/libraries used for building SPAs (Single Page Applications) are:
+
+1. ReactJS
+Type: Library (not a full framework)
+Developed by: Facebook (Meta)
+Uses: Component-based architecture, virtual DOM
+Routing: react-router-dom
+State Management: React Context, Redux, Zustand, etc.
+
+=> Strengths:
+Huge ecosystem
+Reusable components
+Great for large apps with dynamic UI
+
+2. Angular
+Type: Full-fledged framework
+Developed by: Google
+Uses: Modules, Components, Services, Dependency Injection
+Routing: @angular/router
+State Management: NgRx, Akita, etc.
+
+=> Strengths:
+Built-in tools (HTTP, forms, routing, RxJS)
+Enterprise-grade
+TypeScript by default
+
+=> 3. Vue.js
+Type: Progressive framework
+Developed by: Evan You and the open-source community
+Uses: Template-based syntax, reactive data binding
+Routing: vue-router
+State Management: Vuex, Pinia
+
+=> Strengths:
+Lightweight and easy to learn
+Flexible structure
+Good for small to medium projects
+
+=> Common SPA Features Across All Three:
+Feature	         ReactJS                  Angular	        Vue.js
+SPA Support	  ✅	                  ✅	                ✅
+Routing	          react-router            @angular/router	vue-router
+Component-based	  ✅	                  ✅	                ✅
+Data Binding	  One-way	          Two-way	        Two-way
+CLI Tool	  create-react-app, Vite  Angular CLI	        Vue CLI, Vite
+TypeScript	  Optional	          Default	        Optional
+
+=> Conclusion
+All three are excellent for SPAs. Here’s a quick guide:
+
+✅ Use Angular for large enterprise projects (structured, full toolset)
+✅ Use React for dynamic UIs and flexibility
+✅ Use Vue if you want easy learning curve and flexible integration
+
+
+If React, Angular, or Vue.js are not used, we still can build web applications using the core technologies:
+=> Technologies Used:
+Technology	Role
+HTML	        Structure of the web page
+CSS	        Styling and layout
+JavaScript (JS)	Interactivity and logic
+jQuery	        Simplified DOM manipulation and AJAX (optional, older method)
+
+=> What Type of App Do We Build Without Frameworks?
+👉 Traditional Multi-Page Applications (MPA) or basic client-side web apps
+🧱 Typical File Structure
+my-app/
+├── index.html
+├── about.html
+├── contact.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+└── images/
+
+1) Each page is a separate HTML file
+2) Clicking a link loads a new page from the server
+3) JavaScript/jQuery is used to:
+   Validate forms
+   Make AJAX calls
+   Show/hide content dynamically
+
+=> Comparison with SPA (React/Angular/Vue)
+Feature	                Traditional HTML+JS App	        SPA with React/Angular/Vue
+Page Reloads	        Yes (each navigation)	        No (dynamic content updates)
+Performance	        Slower after many reloads	Faster and smoother
+Code Management	        Harder for large apps	        Easier with components, modules
+Development Speed	Slower with more manual work	Faster using framework tools
+User Experience	        Basic	                        Rich, app-like feel
+
+📝 When to Use HTML, CSS, JS, and jQuery
+✅ Good for:
+Small static websites
+Landing pages
+Simple forms or calculators
+Quick prototypes
+
+❌ Not ideal for:
+Large apps with dynamic data
+Apps requiring routing/state management
+
+SPA (Single Page Application)
+A Single Page Application is a web app that loads a single HTML page and updates the content dynamically using JavaScript, without refreshing the whole page.
+
+✅ Key features:
+No full page reloads
+Fast and smooth user experience
+Uses AJAX to fetch data from the server
+
+🅰️ AngularJS
+⚠️ Note: AngularJS (version 1.x) is the older version of Angular. It's now deprecated, and Angular 2+ is the modern framework (Angular 20 being the latest as of 2025).
+
+AngularJS was specifically designed for building SPAs using the MVC architecture.
+
+🧱 AngularJS = MVC Architecture
+✅ MVC Explained:
+Part	    Description	                 AngularJS Example
+Model	    Manages the app data	$scope.data, services, factories
+View	    UI seen by the user	        HTML with AngularJS expressions ({{}})
+Controller  Connects model and view	ng-controller="MainCtrl" logic in JS
+
+Flow:
+sql
+User interacts → Controller updates Model → View updates automatically
+
+🧠 Example of AngularJS MVC
+<!-- index.html -->
+<div ng-app="myApp" ng-controller="MainCtrl">
+  <h2>Hello {{ name }}</h2>
+  <input type="text" ng-model="name" />
+</div>
+
+js
+// app.js
+var app = angular.module('myApp', []);
+app.controller('MainCtrl', function($scope) {
+  $scope.name = "Suraj";
+});
+
+Model: name variable in $scope
+View: HTML template with binding ({{ name }})
+Controller: MainCtrl manages logic
+
+🟡 Summary
+Concept	    Description
+SPA	    Loads once and updates dynamically
+AngularJS   A framework that helps build SPAs
+MVC	    Design pattern separating data (Model), UI (View), and logic (Controller)
+
+✅ Angular 2 to Angular 20 — Core Building Blocks Stay the Same
+Starting from Angular 2 up to the latest Angular 20, the core structure and building blocks remain consistent — only features, syntax improvements, performance upgrades, and new tools are added in each version.
+
+🧱 Core Building Blocks of Angular (From Angular 2 onward)
+Block	        Description
+Component	Controls a part of the UI; made up of HTML, CSS, and TypeScript
+Directive	Adds behavior to elements (e.g., *ngIf, *ngFor, custom directives)
+Binding	        Connects data between component and template ({{ }}, [], ())
+Pipes	        Transforms data in templates (e.g., date, uppercase, custom pipes)
+Module	        Groups related components, services (e.g., AppModule, feature modules)
+Service	        Holds business logic and shared data; injected via Dependency Injection
+
+=> Angular 20: What's New (Compared to Angular 2)
+Feature/Upgrade	         Description
+Signals	                New reactivity model to replace RxJS in many cases (more efficient)
+@if / @for	        New template control flow syntax (simpler and faster than *ngIf, *ngFor)
+Standalone Components	No need for NgModule in small apps or lazy loading
+Faster Build Tools	Uses esbuild, Vite support, no more ngcc
+Improved SSR	        Better server-side rendering performance
+Zoneless Angular	Optional zone.js-free apps for better performance
+Better TypeScript	Always supports latest TS versions
+Modern Forms API	More flexible and composable reactive forms (work in progress)
+
+=> Summary
+Angular 2 ➡ Angular 20	                                                Change
+1) Core Blocks: Component, Directive, Binding, Pipe, Module, Service	✅ Still the same
+2) Architecture: Component-based	                                ✅ Still the same
+3) Tools & Features	                                                🚀 Improved every version
+4) Modern Syntax & Performance	                                        Angular 20 is faster and cleaner
+
+=> What is npm?
+🔹 npm stands for Node Package Manager
+It is the default package manager for Node.js — used to install, manage, and share JavaScript packages (libraries, tools, frameworks).
+
+✅ What is npm used for in Angular?
+When you use Angular CLI, it uses npm to:
+
+Task	                Example
+Install Angular CLI	npm install -g @angular/cli
+Create Angular Project	Uses npm to install dependencies
+Install libraries	npm install bootstrap, npm install rxjs
+Manage dependencies	Through package.json file
+Run Angular apps	Uses scripts like npm start or ng serve
+
+=> What is the npm Website?
+https://www.npmjs.com
+The npm website is the official registry and search engine for over 2 million+ JavaScript packages.
+
+🔍 You can use it to:
+Search for libraries (e.g., Angular, RxJS, Bootstrap, lodash, etc.)
+View documentation, versions, and download stats
+Copy install commands (e.g., npm install @angular/core)
+Check dependencies and GitHub repo links
+
+=> Key Files Involved
+1) package.json
+Tracks all your installed packages, app name, version, scripts, etc.
+
+2) node_modules/
+Stores all downloaded packages (automatically created when running npm install)
+
+=> Summary
+Term	        Meaning
+npm	        A tool to install/manage JS packages (like Angular CLI, RxJS, etc.)
+npmjs.com	A website to explore, search, and learn about JavaScript packages
+In Angular	npm installs CLI, dependencies, libraries, and runs scripts
+
+=======================================
+https://www.npmjs.com/package/@angular/cli
+> npm i @angular/cli
+> ng v
+
+D:\a-20>ng v
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+
+
+Angular CLI: 20.0.5
+Node: 22.17.0
+Package Manager: npm 10.9.2
+OS: win32 x64
+
+Angular:
+...
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.2000.5 (cli-only)
+@angular-devkit/core         20.0.5 (cli-only)
+@angular-devkit/schematics   20.0.5 (cli-only)
+@schematics/angular          20.0.5 (cli-only)
+
+
+D:\a-20>ng new myapp
+√ Do you want to create a 'zoneless' application without zone.js (Developer Preview)? No
+√ Which stylesheet format would you like to use? CSS             [ https://developer.mozilla.org/docs/Web/CSS
+          ]
+√ Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
+CREATE myapp/angular.json (2485 bytes)
+CREATE myapp/package.json (1127 bytes)
+CREATE myapp/README.md (1527 bytes)
+CREATE myapp/tsconfig.json (1026 bytes)
+CREATE myapp/.editorconfig (331 bytes)
+CREATE myapp/.gitignore (629 bytes)
+CREATE myapp/tsconfig.app.json (444 bytes)
+CREATE myapp/tsconfig.spec.json (422 bytes)
+CREATE myapp/.vscode/extensions.json (134 bytes)
+CREATE myapp/.vscode/launch.json (490 bytes)
+CREATE myapp/.vscode/tasks.json (980 bytes)
+CREATE myapp/src/main.ts (228 bytes)
+CREATE myapp/src/index.html (304 bytes)
+CREATE myapp/src/styles.css (81 bytes)
+CREATE myapp/src/app/app.spec.ts (686 bytes)
+CREATE myapp/src/app/app.ts (274 bytes)
+CREATE myapp/src/app/app.css (0 bytes)
+CREATE myapp/src/app/app.html (20436 bytes)
+CREATE myapp/src/app/app.config.ts (412 bytes)
+CREATE myapp/src/app/app.routes.ts (80 bytes)
+CREATE myapp/public/favicon.ico (15086 bytes)
+√ Packages installed successfully.
+    Directory is already under version control. Skipping initialization of git.
+
+D:\a-20>cd myapp
+
+D:\a-20\myapp>code .
+
+D:\a-20\myapp>
+
+=> Comparison: Angular 16 vs Angular 20 File Structure
+Both versions follow the component-based architecture, but Angular 20 introduces some modern improvements such as Standalone Components, Signals, and simplified setup — which may change how files are structured or named.
+
+📁 Angular 16 File Structure (Traditional Setup)
+└── app/
+    ├── app.component.ts          ← Root component logic
+    ├── app.component.html        ← Template
+    ├── app.component.css         ← Styling
+    ├── app.component.spec.ts     ← Unit test
+    ├── app.routes.ts             ← Routing configuration
+    ├── app.config.ts             ← App-level config (optional)
+    └── app.module.ts             ← Root Angular module
+📌 Uses the classic NgModules, tightly-coupled files for each component.
+
+📁 Angular 20 File Structure (Modern Setup)
+src/
+└── app/
+    ├── app.ts                    ← Root standalone component (no module)
+    ├── app.html                  ← Template
+    ├── app.css                   ← Styling
+    ├── app.spec.ts               ← Unit test
+    ├── app.routes.ts             ← Routing config (can be route-based lazy loading)
+    ├── app.config.ts             ← App-wide configuration using new setup
+📌 Uses Standalone Components, which don’t need NgModule. All logic can go inside app.ts.
+
+🆕 Key Changes in Angular 20
+Feature / Concept	Angular 16	                Angular 20
+NgModule	        Required (app.module.ts)	Optional (with standalone components)
+Component File Names	app.component.ts	        Just app.ts (more minimal)
+Setup File	        main.ts + app.module.ts	        main.ts + app.config.ts + app.ts
+Routing	                In app.routes.ts + RouterModule	Modern lazy loading, route-based setup
+Structure	        Verbose and modular	        More minimal and streamlined
+
+=> Summary
+Version	        Uses NgModule	File Naming	        Setup Style
+Angular 16	✅ Yes	        app.component.ts etc.	Traditional (modular)
+Angular 20	❌ Optional	app.ts, app.html	Standalone & simplified
+
+=> 1. Sample Code for app.ts Using Standalone Components (Angular 20)
+Angular 20 supports standalone components, which means you don't need to create app.module.ts.
+
+Here’s how app.ts might look:
+// src/app/app.ts
+import { Component } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  templateUrl: './app.html',
+  styleUrls: ['./app.css'],
+})
+export class AppComponent {
+  title = 'Angular 20 Standalone App';
+}
+
+// Bootstrap the app
+bootstrapApplication(AppComponent, {
+  providers: [provideRouter(routes)],
+});
+
+=> app.html
+<h1>Welcome to {{ title }}</h1>
+<router-outlet></router-outlet>
+
+=> app.routes.ts
+import { Routes } from '@angular/router';
+export const routes: Routes = [
+  {
+    path: '',
+    loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
+  }
+];
+
+=> home.component.ts (Standalone)
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  template: `<h2>This is Home Page</h2>`,
+})
+export class HomeComponent {}
+
+=> 2. Migration Guide: Angular 16 ➡ Angular 20 (Simplified)
+=> Step-by-Step Overview
+Step	                        Description
+🔄 Update Angular CLI	        ng update @angular/cli @angular/core
+🆕 Use Standalone Components	Replace @NgModule with standalone: true
+⚙️ Update Bootstrapping	        Use bootstrapApplication() in main.ts or app.ts
+🛣️ Migrate Routing	        Use provideRouter() in bootstrap config
+🧹 Remove	                AppModule, if using only standalone components
+
+=> From this (Angular 16 - main.ts):
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
+
+=> To this (Angular 20 - main.ts):
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app';
+
+bootstrapApplication(AppComponent)
+  .catch(err => console.error(err));
+
+=> Summary
+app.ts replaces app.module.ts using standalone components
+Angular 20 promotes minimal setup, faster loading, and modern syntax
+Migration is smooth if you follow a step-by-step update
+
+> ng serve
+
+✅ app.ts (Standalone Component)
+import { Component } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  template: `<h1>Welcome to Angular Series New</h1>`,
+  styles: [`
+    h1 {
+      text-align: center;
+      color: #1976d2;
+      margin-top: 50px;
+      font-family: Arial, sans-serif;
+    }
+  `]
+})
+export class AppComponent {}
+
+// Bootstrap the standalone component
+bootstrapApplication(AppComponent);
+
+app.html
+<h1>Welcome to Angular 20 Series New</h1>
+<router-outlet/>
+
+================================================
+Day-02 Basic Typescript 
+================================================
+create a new folder as => app => componenets
+right click and open in integrated terminates 
+
+PS D:\a-20\myapp\src\app\componenets> ng generate component variables
+CREATE src/app/componenets/variables/variables.spec.ts (572 bytes)
+CREATE src/app/componenets/variables/variables.ts (208 bytes) 
+CREATE src/app/componenets/variables/variables.css (0 bytes)  
+CREATE src/app/componenets/variables/variables.html (25 bytes)
+
+PS D:\a-20\myapp\src\app\componenets> ng g c user
+CREATE src/app/componenets/user/user.spec.ts (537 bytes)
+CREATE src/app/componenets/user/user.ts (188 bytes) 
+CREATE src/app/componenets/user/user.css (0 bytes)  
+CREATE src/app/componenets/user/user.html (20 bytes)
+
+app.html
+<!-- <h1>Welcome to Angular 20 Series New</h1> -->
+<table style="width: 100%;">
+  <tr>
+    <td><app-user /></td>
+    <td><app-variables /></td>
+  </tr>
+</table>
+<router-outlet />
+
+variables.ts
+import { Component } from '@angular/core';
+import { first } from 'rxjs';
+
+@Component({
+  selector: 'app-variables',
+  imports: [],
+  templateUrl: './variables.html',
+  styleUrl: './variables.css',
+})
+export class Variables {
+  //declaration + initialization (Best)
+  courseName: string = 'Angular 20';
+  rollNo: number = 101;
+  isActive: boolean = true;
+  currentDate: Date = new Date();
+  nothing: null = null;
+  notAssigned: undefined = undefined;
+  bigCount: bigint = 9007199254740991n;
+  uniqueId: symbol = Symbol('id');
+
+  //declaration
+  courseTitle: string;
+  courseDuration: string;
+  instructorName: string;
+  enrolledStudents: number;
+
+  productPrice: number;
+
+  //initialization
+  productName = 'Mobile Samsung';
+  student: any;
+  firstName: string = 'Pranay';
+  lastName: string = 'Pawar';
+  fullName: string = '';
+
+  constructor() {
+    this.courseName = 'Angular 20';
+    this.rollNo = 101;
+    this.isActive = false;
+
+    this.courseTitle = 'Angular 20 Mastery from Zero to Hero';
+    this.courseDuration = '6 Weeks';
+    this.enrolledStudents = 1200;
+    this.instructorName = 'Suraj Pawar';
+
+    this.productName = 'Real Me Mobile';
+    this.productPrice = 45000;
+    console.log(this.productName);
+
+    this.student = '200';
+    this.student = 12345;
+
+    this.fullName = this.firstName + this.lastName;
+
+    this.showWelcomeMessage();
+    this.showMessage('Welcome Angular Developer');
+    const result = this.addTwoNum(10, 20);
+  }
+  showWelcomeMessage() {
+    alert('welcome in Angular Series');
+    let fullName = this.firstName + ' ' + this.lastName;
+  }
+  showMessage(message: string): void {
+    alert(message);
+  }
+  addTwoNum(num1: number, num2: number): number {
+    return num1 + num2;
+  }
+}
+
+variables.html
+<p>variables works!</p>
+<h3>This is variables compoenets</h3>
+<select name="" id="">
+    <option value="">Pune</option>
+    <option value="">Mumbai</option>
+    <option value="">Nagpur</option>
+    <option value="">Nashik</option>
+</select>
+
+user.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-user',
+  imports: [],
+  templateUrl: './user.html',
+  styleUrl: './user.css',
+  preserveWhitespaces: true,
+})
+export class User {
+  userName: string = 'Suraj Pawar';
+  userEmail: string = 'suraj@example.com';
+  isLoggedIn: boolean = true;
+  loginCount: number = 5;
+
+  greetUser(): string {
+    return `Welcome back, ${this.userName}!`;
+  }
+  toggleLogin(): void {
+    this.isLoggedIn = !this.isLoggedIn;
+  }
+  incrementLogin(): void {
+    this.loginCount++;
+  }
+}
+
+user.html
+<h2>{{ greetUser() }}</h2>
+<p>Email: {{ userEmail }}</p>
+<p>Status: {{ isLoggedIn ? 'Online' : 'Offline' }}</p>
+<p>Login Count: {{ loginCount }}</p>
+
+<button (click)="toggleLogin()">Toggle Login</button>
+<button (click)="incrementLogin()">Login Again</button>
+
+================================================
+Day-03 Component Creation Data Binding 
+Interpolation , Property Binding
+================================================
+create a custome component =>
+src
+app
+create a new folder => admin => admin.ts
+
+admin.ts
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-admin',
+  standalone: true,
+  template: `
+    <h1>Admin: {{ adminName }}</h1>
+    <h1>Total Users: {{ totalUsers }}</h1>
+    <h1>Welcome Message: {{ getWelcomeMessage() }}</h1>
+  `,
+  styles: [
+    `
+      h1 {
+        color: red;
+      }
+    `,
+  ],
+})
+export class admin {
+  adminName: string = 'Admin Suraj';
+  totalUsers: number = 134;
+  lastLogin: string = '2025-08-02 08:15 AM';
+
+  getWelcomeMessage(): string {
+    return `Welcome ${this.adminName}, total users: ${this.totalUsers}`;
+  }
+}
+
+
+=> What was fixed:
+Issue	                                Fix
+templateUrl used for inline HTML	Use template instead
+styleUrls used for inline CSS	        Use styles instead
+Backticks (`) in templateUrl	        Not needed — use template: ``...``
+Class name admin	                Should start with uppercase: AdminComponent
+Duplicated admin name line	        Removed one, replaced with welcome message
+
+
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-admin',
+  standalone: true,
+  template: `
+    <h1>Admin: {{ adminName }}</h1>
+    <h1>Total Users: {{ totalUsers }}</h1>
+    <p class="primary">This is a paragraph</p>
+    <h1>Welcome Message: {{ getWelcomeMessage() }}</h1>
+  `,
+  styles: [
+    `
+      primary {
+       color:red;
+      }
+    `,
+  ],
+})
+export class admin {
+  adminName: string = 'Admin Suraj';
+  totalUsers: number = 134;
+  lastLogin: string = '2025-08-02 08:15 AM';
+
+  getWelcomeMessage(): string {
+    return `Welcome ${this.adminName}, total users: ${this.totalUsers}`;
+  }
+}
+
+app.html
+<!-- <h1>Welcome to Angular 20 Series New</h1> -->
+<table style="width: 100%;">
+  <tr>
+    <td><app-user /></td>
+    <td><app-variables /></td>
+    <td><app-admin /></td>
+  </tr>
+</table>
+<router-outlet />
+
+PS D:\a-20\myapp\src\app\componenets> ng g c dataBinding                  
+CREATE src/app/componenets/data-binding/data-binding.spec.ts (587 bytes)
+CREATE src/app/componenets/data-binding/data-binding.ts (219 bytes) 
+CREATE src/app/componenets/data-binding/data-binding.css (0 bytes)  
+CREATE src/app/componenets/data-binding/data-binding.html (28 bytes)
+PS D:\a-20\myapp\src\app\componenets> 
+
+✅ How to Install Bootstrap & Font Awesome in Angular
+🔹 1. Install via CDN (Quick Way)
+
+Add these in your index.html inside <head>:
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+
+<!-- Font Awesome -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+=> Problem with CDN Approach:
+Limitation	                Explanation
+❌ No version control	        You always rely on the external source; version may change.
+❌ No offline support	        Won’t work if user is offline or CDN is down.
+❌ Not optimized for production	Slower loading, less control over bundling.
+❌ Can't customize easily	Hard to override variables like colors, spacing, etc.
+❌ Not best for enterprise apps	Security and dependency management are poor via CDN.
+
+🔹 2. Recommended: Install via NPM (for Angular projects)
+✅ Install Bootstrap:
+npm install bootstrap
+
+✅ Install Font Awesome:
+npm i font-awesome
+
+✅ Add in angular.json:
+Under "styles" and "scripts" in angular.json:
+"styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css",
+              "src/styles.css"
+            ]
+"scripts": [
+  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+]
+
+✅ Now you can use:
+<!-- Bootstrap button -->
+<button class="btn btn-primary">Click</button>
+
+<!-- Font Awesome icon -->
+<i class="fas fa-user"></i>
+
+data-binding.ts
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-data-binding',
+  imports: [],
+  templateUrl: './data-binding.html',
+  styleUrl: './data-binding.css'
+})
+export class DataBinding {
+}
+
+data-binding.html
+<div class="row">
+  <div class="col-3">
+    <h1>One way Data Binding</h1>
+  </div>
+</div>
+
+app.html
+<h1>Hello World</h1>
+<p>this is a paragraph tag</p>
+<table style="width: 100%">
+  <tr>
+    <td><app-data-binding /></td>
+  </tr>
+</table>
+<router-outlet />
+
+🔹 Types of Data Binding in Angular
+✅ 1. One-Way Data Binding
+➤ A. From .ts to .html
+1. Interpolation ({{ }})
+Used to display data from the component to the template.
+html
+<p>{{ username }}</p>
+
+ts
+username = 'Suraj';
+
+2. Property Binding ([ ])
+Used to bind DOM element properties to component variables.
+html
+<input [value]="username" />
+
+➤ B. From .html to .ts
+3. Event Binding (( ))
+Used to handle events like click, input, submit from the template.
+html
+<button (click)="greetUser()">Greet</button>
+
+ts
+greetUser() {
+  alert('Hello Suraj!');
+}
+
+✅ 2. Two-Way Data Binding
+✅ Using [(ngModel)] directive
+Syncs data both ways — when user types, variable updates, and vice versa.
+<input [(ngModel)]="username" />
+<p>Your name is: {{ username }}</p>
+
+ts
+username = 'Suraj';
+
+🔸 Make sure to import FormsModule in your module for ngModel to work.
+ts
+import { FormsModule } from '@angular/forms';
+@NgModule({
+  imports: [FormsModule]
+})
+
+> ng build
+
+data-binding.html
+<div class="row">
+  <div class="col-3">courseName =>{{ courseName }}</div>
+  <div class="col-3">
+    courseDuration =>
+    <h3>{{ courseDuration }}</h3>
+  </div>
+  <div class="col-3">
+    <p><span>latestVersion =></span>{{ latestVersion }}<span></span></p>
+  </div>
+  <div class="col-3">
+    <input
+      type="text"
+      value="{{ courseName }}"
+      placeholder="{{ myPlaceholderText }}"
+    />
+  </div>
+  <div class="col-3">
+    <input type="checkbox" [checked]="isActive" />
+  </div>
+</div>
+<!-- Property Binding -->
+<div class="row">
+  <div class="col-3">
+    <input type="text" [placeholder]="myPlaceholderText" [value]="courseName" />
+  </div>
+  <div class="col-3">
+    <input [type]="inputType" />
+  </div>
+  <div class="col-3">
+    <div [class]="myClassName">Div-01</div>
+  </div>
+  <div class="col-3"></div>
+</div>
+
+
+data-binding.ts
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-data-binding',
+  imports: [],
+  templateUrl: './data-binding.html',
+  styleUrl: './data-binding.css',
+})
+export class DataBinding {
+  courseName: string = 'Angular';
+  courseDuration = '3 months';
+  latestVersion: string;
+  isActive: boolean = false;
+  myPlaceholderText: string = 'Enter Your Name';
+  inputType: string = 'checkbox';
+  myClassName: string = 'bg-warning p-3';
+  constructor() {
+    this.courseName = 'Angular from Zero to Hero';
+    this.courseDuration = '4 Months';
+    this.latestVersion = 'Angular 20 Version';
+  }
+}
+
+app.html
+<h1>Hello World</h1>
+<p>this is a paragraph tag</p>
+<table style="width: 100%">
+  <tr>
+    <td><app-data-binding /></td>
+  </tr>
+</table>
+<router-outlet />
+
+================================================
+Day-04 Component Creation Data Binding 
+Event Binding
+================================================
+import { JsonPipe } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-data-binding',
+  imports: [FormsModule, JsonPipe],
+  templateUrl: './data-binding.html',
+  styleUrl: './data-binding.css',
+})
+export class DataBinding {
+  courseName: string = 'Angular';
+  courseDuration = '3 months';
+  latestVersion: string;
+  isActive: boolean = false;
+  myPlaceholderText: string = 'Enter Your Name';
+  inputType: string = 'checkbox';
+  myClassName: string = 'bg-warning p-3';
+  constructor() {
+    this.courseName = 'Angular from Zero to Hero';
+    this.courseDuration = '4 Months';
+    this.latestVersion = 'Angular 20 Version';
+  }
+
+  showWelcomeMessage() {
+    alert('welcome to learning Angular');
+  }
+  showMessage(message: string): void {
+    alert(message);
+  }
+  cityChanged() {
+    alert('City Got Changed...!!!');
+  }
+  onTextChanges() {
+    console.log('Text changed');
+  }
+  onMouseEnter() {
+    console.log('On Mouse Enter...!!!');
+  }
+  onMouseLeft() {
+    console.log('On Mouse Left...!!!');
+  }
+  ChangeCourseName() {
+    this.courseName = 'Java Backend';
+  }
+  studentObj = {
+    name: '',
+    age: null,
+    course: '',
+    email: '',
+    contactNumber: '',
+    address: '',
+    gender: '',
+    enrollmentDate: '',
+    isScholarship: false,
+  };
+  cityList: string[] = ['Mumbai', 'Pune', 'Delhi', 'Bangalore', 'Hyderabad'];
+}
+
+
+<div class="row">
+  <div class="col-3">courseName =>{{ courseName }}</div>
+  <div class="col-3">
+    courseDuration =>
+    <h3>{{ courseDuration }}</h3>
+  </div>
+  <div class="col-3">
+    <p><span>latestVersion =></span>{{ latestVersion }}<span></span></p>
+  </div>
+  <div class="col-3">
+    <input
+      type="text"
+      value="{{ courseName }}"
+      placeholder="{{ myPlaceholderText }}"
+    />
+  </div>
+  <div class="col-3">
+    <input type="checkbox" [checked]="isActive" />
+  </div>
+</div>
+<!-- Property Binding -->
+<div class="row">
+  <div class="col-3">
+    <input type="text" [placeholder]="myPlaceholderText" [value]="courseName" />
+  </div>
+  <div class="col-3">
+    <input [type]="inputType" />
+  </div>
+  <div class="col-3">
+    <div [class]="myClassName">Div-01</div>
+  </div>
+  <div class="col-3"></div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <button class="btn btn-primary" (click)="showWelcomeMessage()">
+      Show Welcome Message
+    </button>
+  </div>
+  <div class="col-3">
+    <button class="btn btn-primary" (click)="showMessage('Angular')">
+      Angular
+    </button>
+    <button class="btn btn-primary" (click)="showMessage('ReactJS')">
+      ReactJS
+    </button>
+    <button class="btn btn-primary" (click)="showMessage('VueJS')">
+      VueJS
+    </button>
+  </div>
+  <div class="col-3">
+    <select (change)="cityChanged()" class="form-select">
+      <option value="Pune">Pune</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Nagpur">Nagpur</option>
+    </select>
+  </div>
+  <div class="col-3">
+    <label for="" (click)="showWelcomeMessage()">Click Me</label>
+  </div>
+  <div class="col-3">
+    <input type="text" (input)="onTextChanges()" />
+  </div>
+  <div class="col-3">
+    <div
+      class="bg-primary p-3"
+      (mouseenter)="onMouseEnter()"
+      (mouseleave)="onMouseLeft()"
+    >
+      Div111
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <input type="text" class="form-control" value="{{ courseName }}" />
+  </div>
+  <div class="col-3">
+    <input type="text" class="form-control" [value]="courseName" />
+  </div>
+  <div class="col-3">
+    {{ courseName }}
+  </div>
+  <div class="col-3">
+    <button class="btn btn-primary" (click)="ChangeCourseName()">
+      ChangeCourse
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <input type="text" [(ngModel)]="courseName" />
+  </div>
+  <div class="col-3">
+    <select [(ngModel)]="courseName" class="form-select">
+      <option value="Angular">Angular</option>
+      <option value="ReactJS">ReactJS</option>
+      <option value="VueJS">VueJS</option>
+      <option value="JavaScript">JavaScript</option>
+      <option value="TypeScript">TypeScript</option>
+    </select>
+  </div>
+  <div class="col-3">
+    <input
+      type="checkbox"
+      [(ngModel)]="isActive"
+      checked
+      class="form-control"
+    />
+    <div class="col-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <h2>Student Registration Form</h2>
+
+      <form>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          [(ngModel)]="studentObj.name"
+          name="name"
+          class="form-control"
+        />
+
+        <br />
+
+        <label for="age">Age:</label>
+        <input
+          type="number"
+          id="age"
+          [(ngModel)]="studentObj.age"
+          name="age"
+          class="form-control"
+        />
+
+        <br />
+
+        <label for="course">Course:</label>
+        <input
+          type="text"
+          id="course"
+          [(ngModel)]="studentObj.course"
+          name="course"
+          class="form-control"
+        />
+
+        <br />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="studentObj.email"
+          name="email"
+          class="form-control"
+        />
+
+        <br />
+
+        <label for="contactNumber">Contact Number:</label>
+        <input
+          type="tel"
+          id="contactNumber"
+          [(ngModel)]="studentObj.contactNumber"
+          name="contactNumber"
+          class="form-control"
+        />
+
+        <br />
+
+        <label for="address">Address:</label>
+        <textarea
+          id="address"
+          [(ngModel)]="studentObj.address"
+          name="address"
+          class="form-control"
+        ></textarea>
+
+        <br />
+
+        <label for="gender">Gender:</label>
+        <select
+          id="gender"
+          [(ngModel)]="studentObj.gender"
+          class="form-select"
+          name="gender"
+        >
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <br />
+
+        <label for="enrollmentDate">Enrollment Date:</label>
+        <input
+          type="date"
+          id="enrollmentDate"
+          [(ngModel)]="studentObj.enrollmentDate"
+          name="enrollmentDate"
+          class="form-control"
+        />
+
+        <br />
+
+        <label for="isScholarship">
+          <input
+            type="checkbox"
+            id="isScholarship"
+            [(ngModel)]="studentObj.isScholarship"
+            name="isScholarship"
+            class="form-control"
+            checked
+          />
+          Scholarship Granted
+        </label>
+
+        <br /><br />
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- Preview Section -->
+      <hr />
+      <h3>Live Preview:</h3>
+      <pre>{{ studentObj | json }}</pre>
+    </div>
+    <div class="col-3">
+      {{ cityList }}
+    </div>
+    <div class="col-3">
+      <input type="text" [(ngModel)]="cityList[0]" class="form-control" />
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <div [contentEditable]="true" [(ngModel)]="courseName">Div</div>
+  </div>
+</div>
+
+=======================================================
+Day-05 Router Basic and Control Flow Statement-Part-01
+=======================================================
+app.html
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MyApp</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="admin">Admin Page</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="dataBinding">Data Binding</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="user-page">User-Page</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="variables">Variables</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="#">Pricing</a>
+        </li>
+      </ul>
+
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" />
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<router-outlet />
+
+page-not-found.html
+<div class="container text-center d-flex align-items-center justify-content-center" style="height: 100vh;">
+  <div>
+    <h1 class="display-1 text-danger fw-bold">404</h1>
+    <h2 class="mb-3 text-secondary">Oops! Page Not Found</h2>
+    <p class="mb-4 text-muted">The page you're looking for doesn't exist or has been moved.</p>
+    <a class="btn btn-primary btn-lg" routerLink="/">Go to Homepage</a>
+  </div>
+</div>
+
+page-not-found.css
+h1 {
+  font-size: 10rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+✅ Optional: Navigate Programmatically
+In .ts file using Router service:
+import { Router } from '@angular/router';
+constructor(private router: Router) {}
+goToHomepage() {
+  this.router.navigate(['/dataBinding']);
+}
+
+In HTML:
+<button class="btn btn-primary btn-lg" (click)="goToHomepage()">
+  Go to Homepage
+</button>
+
+PS D:\a-20\myapp\src\app\componenets> ng g c pageNotFound
+CREATE src/app/componenets/page-not-found/page-not-found.spec.ts (595 bytes)
+CREATE src/app/componenets/page-not-found/page-not-found.ts (226 bytes) 
+CREATE src/app/componenets/page-not-found/page-not-found.css (0 bytes)  
+CREATE src/app/componenets/page-not-found/page-not-found.html (30 bytes)
+
+PS D:\a-20\myapp\src\app\componenets> ng g c controlFlow
+CREATE src/app/componenets/control-flow/control-flow.spec.ts (587 bytes)
+CREATE src/app/componenets/control-flow/control-flow.ts (219 bytes) 
+CREATE src/app/componenets/control-flow/control-flow.css (0 bytes)  
+CREATE src/app/componenets/control-flow/control-flow.html (28 bytes)
+
+control-flow.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-control-flow',
+  imports: [],
+  templateUrl: './control-flow.html',
+  styleUrl: './control-flow.css',
+})
+export class ControlFlow {
+  isDivVisible: boolean = false;
+  div2Status: string = 'show';
+  hideDiv1() {
+    this.isDivVisible = false;
+  }
+  showDiv1() {
+    this.isDivVisible = true;
+  }
+  toggleDiv2() {
+    if (this.div2Status == 'show') {
+      this.div2Status = 'hide';
+    } else {
+      this.div2Status = 'show';
+    }
+    //this.div2Status = this.div2Status == 'show' ? 'hide' : 'show';
+  }
+}
+
+control-flow.html
+<div class="row">
+  <div class="col-3">
+    @if(isDivVisible==true){
+    <div class="bg-primary p-3">Div 1</div>
+    }
+  </div>
+  <div class="col-3">
+    --{{ div2Status }}
+    @if(div2Status=="show"){
+    <div class="bg-danger p-3">Div 2</div>
+    }
+  </div>
+</div>
+<div class="row pt-3">
+  <div class="col-3">
+    <button class="btn btn-success" (click)="hideDiv1()">Hide</button>
+    <button class="btn btn-danger" (click)="showDiv1()">Show</button>
+  </div>
+  <div class="col-3">
+    <button class="btn btn-success" (click)="toggleDiv2()">Toggle</button>
+  </div>
+</div>
+
+=======================================================
+Day-06 Control Flow Statement-Part-02
+=======================================================
+import { JsonPipe } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-control-flow',
+  imports: [FormsModule, JsonPipe],
+  templateUrl: './control-flow.html',
+  styleUrl: './control-flow.css',
+})
+export class ControlFlow {
+  isDivVisible: boolean = false;
+  div2Status: string = 'show';
+  startingCharDayName: string = '';
+  hideDiv1() {
+    this.isDivVisible = false;
+  }
+  showDiv1() {
+    this.isDivVisible = true;
+  }
+  toggleDiv2() {
+    // if (this.div2Status == 'show') {
+    //   this.div2Status = 'hide';
+    // } else {
+    //   this.div2Status = 'show';
+    // }
+    this.div2Status = this.div2Status == 'show' ? 'hide' : 'show';
+  }
+  toggleDiv3() {
+    this.isDivVisible = !this.isDivVisible;
+  }
+  cityList: string[] = ['Mumbai', 'Pune', 'Delhi', 'Bangalore', 'Hyderabad'];
+
+  studentList = [
+    {
+      id: 1,
+      name: 'Suraj Pawar',
+      age: 22,
+      course: 'Angular',
+      email: 'suraj@example.com',
+      contactNumber: '9876543210',
+      gender: 'Male',
+      enrollmentDate: '2025-08-01',
+      isScholarship: true,
+      city: 'Pune',
+    },
+    {
+      id: 2,
+      name: 'Sneha Patil',
+      age: 20,
+      course: 'React',
+      email: 'sneha@example.com',
+      contactNumber: '9876543211',
+      gender: 'Female',
+      enrollmentDate: '2025-07-20',
+      isScholarship: false,
+      city: 'Mumbai',
+    },
+    {
+      id: 3,
+      name: 'Amit Sharma',
+      age: 23,
+      course: 'Node.js',
+      email: 'amit@example.com',
+      contactNumber: '9876543212',
+      gender: 'Male',
+      enrollmentDate: '2025-06-15',
+      isScholarship: true,
+      city: 'Nagpur',
+    },
+  ];
+}
+
+<div class="row">
+  <div class="col-3">
+    @if(isDivVisible==true){
+    <div class="bg-primary p-3">Div 1</div>
+    }
+  </div>
+  <div class="col-3">
+    --{{ div2Status }}
+    @if(div2Status=="show"){
+    <div class="bg-danger p-3">Div 2</div>
+    }
+  </div>
+  <div class="col-3">
+    @if(isDivVisible){
+    <div class="bg-warning pt-3" (click)="toggleDiv3()">Div 3</div>
+    }
+  </div>
+</div>
+<div class="row pt-3">
+  <div class="col-3">
+    <button class="btn btn-success" (click)="hideDiv1()">Hide</button>
+    <button class="btn btn-danger" (click)="showDiv1()">Show</button>
+  </div>
+  <div class="col-3">
+    <button class="btn btn-success" (click)="toggleDiv2()">Toggle</button>
+  </div>
+  <div class="col-3">
+    <button class="btn btn-success" (click)="toggleDiv3()">Toggle</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <input
+      type="text"
+      placeholder="Day start char"
+      [(ngModel)]="startingCharDayName"
+    />
+  </div>
+  <div class="col-3">
+    @if (startingCharDayName === 'mon') {
+    <span>Monday</span>
+    } @else if (startingCharDayName === 'tue') {
+    <span>Tuesday</span>
+    } @else if (startingCharDayName === 'wed') {
+    <span>Wednesday</span>
+    } @else if (startingCharDayName === 'thu') {
+    <span>Thursday</span>
+    } @else if (startingCharDayName === 'fri') {
+    <span>Friday</span>
+    } @else if (startingCharDayName === 'sat') {
+    <span>Saturday</span>
+    } @else if (startingCharDayName === 'sun') {
+    <span>Sunday</span>
+    } @else {
+    <span>Invalid Day</span>
+    }
+  </div>
+  <div class="col-3">
+    @switch (startingCharDayName) { @case ('mon') {
+    <span>Monday</span>
+    } @case ('tue') {
+    <span>Tuesday</span>
+    } @case ('wed') {
+    <span>Wednesday</span>
+    } @case ('thu') {
+    <span>Thursday</span>
+    } @case ('fri') {
+    <span>Friday</span>
+    } @case ('sat') {
+    <span>Saturday</span>
+    } @case ('sun') {
+    <span>Sunday</span>
+    } @default {
+    <span>Invalid Day</span>
+    } }
+  </div>
+  <div class="col-3">
+    <h3>Live Preview:</h3>
+    <!-- <pre>{{ studentList }}</pre> -->
+    <pre>{{ studentList | json }}</pre>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <ul>
+      @for(item of cityList ;track $index){
+      <li>{{ item }}</li>
+      }
+    </ul>
+  </div>
+  <div class="col-3">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Course</th>
+          <th>Email</th>
+          <th>Contact Number</th>
+          <th>Gender</th>
+          <th>Enrollment Date</th>
+          <th>Scholarship</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(item of studentList;track $index){
+        <tr class="table-active">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.age }}</td>
+          <td>{{ item.course }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.contactNumber }}</td>
+          <td>{{ item.gender }}</td>
+          <td>{{ item.enrollmentDate }}</td>
+          <td>{{ item.isScholarship }}</td>
+          <td>{{ item.city }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  <div class="col-3"></div>
+</div>
+<div class="row">
+  <div class="row g-4">
+    <!-- Card 1 -->
+    @for (item of studentList; track $index) {
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 rounded-3">
+        <img
+          src="https://via.placeholder.com/400x200"
+          class="card-img-top"
+          alt="{{ item.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text text-muted">
+            Course: {{ item.course }}<br />
+            City: {{ item.city }}<br />
+            Email: {{ item.email }}
+          </p>
+          <a href="#" class="btn btn-primary btn-sm">View Profile</a>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+
+=======================================================
+Day-07 NgClass and NgStyle
+=======================================================
+Structural Directive :
+*ngIf => @if, @else
+*ngFor => @for
+*ngSwitch => @switch
+
+Attribute Directive :
+ngClass => add class , dynamic class
+ngStyle => add css, dynamic css
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

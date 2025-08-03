@@ -1,0 +1,7 @@
+<h2>{{ greetUser() }}</h2>
+<p>Email: {{ userEmail }}</p>
+<p>Status: {{ isLoggedIn ? 'Online' : 'Offline' }}</p>
+<p>Login Count: {{ loginCount }}</p>
+
+<button (click)="toggleLogin()">Toggle Login</button>
+<button (click)="incrementLogin()">Login Again</button>

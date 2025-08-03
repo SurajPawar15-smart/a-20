@@ -1,0 +1,246 @@
+<div class="row">
+  <div class="col-3">courseName =>{{ courseName }}</div>
+  <div class="col-3">
+    courseDuration =>
+    <h3>{{ courseDuration }}</h3>
+  </div>
+  <div class="col-3">
+    <p><span>latestVersion =></span>{{ latestVersion }}<span></span></p>
+  </div>
+  <div class="col-3">
+    <input
+      type="text"
+      value="{{ courseName }}"
+      placeholder="{{ myPlaceholderText }}"
+    />
+  </div>
+  <div class="col-3">
+    <input type="checkbox" [checked]="isActive" />
+  </div>
+</div>
+<!-- Property Binding -->
+<div class="row">
+  <div class="col-3">
+    <input type="text" [placeholder]="myPlaceholderText" [value]="courseName" />
+  </div>
+  <div class="col-3">
+    <input [type]="inputType" />
+  </div>
+  <div class="col-3">
+    <div [class]="myClassName">Div-01</div>
+  </div>
+  <div class="col-3"></div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <button class="btn btn-primary" (click)="showWelcomeMessage()">
+      Show Welcome Message
+    </button>
+  </div>
+  <div class="col-3">
+    <button class="btn btn-primary" (click)="showMessage('Angular')">
+      Angular
+    </button>
+    <button class="btn btn-primary" (click)="showMessage('ReactJS')">
+      ReactJS
+    </button>
+    <button class="btn btn-primary" (click)="showMessage('VueJS')">
+      VueJS
+    </button>
+  </div>
+  <div class="col-3">
+    <select (change)="cityChanged()" class="form-select">
+      <option value="Pune">Pune</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Nagpur">Nagpur</option>
+    </select>
+  </div>
+  <div class="col-3">
+    <label for="" (click)="showWelcomeMessage()">Click Me</label>
+  </div>
+  <div class="col-3">
+    <input type="text" (input)="onTextChanges()" />
+  </div>
+  <div class="col-3">
+    <div
+      class="bg-primary p-3"
+      (mouseenter)="onMouseEnter()"
+      (mouseleave)="onMouseLeft()"
+    >
+      Div111
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <input type="text" class="form-control" value="{{ courseName }}" />
+  </div>
+  <div class="col-3">
+    <input type="text" class="form-control" [value]="courseName" />
+  </div>
+  <div class="col-3">
+    {{ courseName }}
+  </div>
+  <div class="col-3">
+    <button class="btn btn-primary" (click)="ChangeCourseName()">
+      ChangeCourse
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <input type="text" [(ngModel)]="courseName" />
+  </div>
+  <div class="col-3">
+    <select [(ngModel)]="courseName" class="form-select">
+      <option value="Angular">Angular</option>
+      <option value="ReactJS">ReactJS</option>
+      <option value="VueJS">VueJS</option>
+      <option value="JavaScript">JavaScript</option>
+      <option value="TypeScript">TypeScript</option>
+    </select>
+  </div>
+  <div class="col-3">
+    <input
+      type="checkbox"
+      [(ngModel)]="isActive"
+      checked
+      class="form-control"
+    />
+    <div class="col-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <h2>Student Registration Form</h2>
+
+      <form>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          [(ngModel)]="studentObj.name"
+          name="name"
+          class="form-control"
+        />
+
+        <br />
+
+        <label for="age">Age:</label>
+        <input
+          type="number"
+          id="age"
+          [(ngModel)]="studentObj.age"
+          name="age"
+          class="form-control"
+        />
+
+        <br />
+
+        <label for="course">Course:</label>
+        <input
+          type="text"
+          id="course"
+          [(ngModel)]="studentObj.course"
+          name="course"
+          class="form-control"
+        />
+
+        <br />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="studentObj.email"
+          name="email"
+          class="form-control"
+        />
+
+        <br />
+
+        <label for="contactNumber">Contact Number:</label>
+        <input
+          type="tel"
+          id="contactNumber"
+          [(ngModel)]="studentObj.contactNumber"
+          name="contactNumber"
+          class="form-control"
+        />
+
+        <br />
+
+        <label for="address">Address:</label>
+        <textarea
+          id="address"
+          [(ngModel)]="studentObj.address"
+          name="address"
+          class="form-control"
+        ></textarea>
+
+        <br />
+
+        <label for="gender">Gender:</label>
+        <select
+          id="gender"
+          [(ngModel)]="studentObj.gender"
+          class="form-select"
+          name="gender"
+        >
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <br />
+
+        <label for="enrollmentDate">Enrollment Date:</label>
+        <input
+          type="date"
+          id="enrollmentDate"
+          [(ngModel)]="studentObj.enrollmentDate"
+          name="enrollmentDate"
+          class="form-control"
+        />
+
+        <br />
+
+        <label for="isScholarship">
+          <input
+            type="checkbox"
+            id="isScholarship"
+            [(ngModel)]="studentObj.isScholarship"
+            name="isScholarship"
+            class="form-control"
+            checked
+          />
+          Scholarship Granted
+        </label>
+
+        <br /><br />
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- Preview Section -->
+      <hr />
+      <h3>Live Preview:</h3>
+      <pre>{{ studentObj | json }}</pre>
+    </div>
+    <div class="col-3">
+      {{ cityList }}
+    </div>
+    <div class="col-3">
+      <input type="text" [(ngModel)]="cityList[0]" class="form-control" />
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3">
+    <div [contentEditable]="true" [(ngModel)]="courseName">Div</div>
+  </div>
+</div>
